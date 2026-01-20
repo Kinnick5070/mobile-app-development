@@ -1,0 +1,38 @@
+<%- include('partials/top') %>
+<main class="container-fluid" role="main"> <!-- Added role="main" for accessibility -->
+  <h1 class="p-3">Contact Me</h1>
+  <div class="container-fluid">
+    <form method="POST" action="/contact/submit" aria-labelledby="contactFormTitle"> <!-- Added aria-labelledby for form -->
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">First Name:</label>
+          <input type="text" class="form-control" id="validationCustom01" placeholder="John" name="firstName" required aria-required="true"> <!-- Added aria-required for accessibility -->
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Last Name:</label>
+          <input type="text" class="form-control" id="validationCustom02" placeholder="Doe" name="lastName" required aria-required="true"> <!-- Added aria-required for accessibility -->
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom03" class="form-label">Email Address:</label>
+          <input type="email" class="form-control" id="validationCustom03" placeholder="name@example.com" name="email" required aria-required="true"> <!-- Added aria-required for accessibility -->
+          <div class="invalid-feedback">
+            Please provide a valid email address.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="contactForm" class="form-label">Reason for Contacting:</label>
+          <textarea name="comments" class="form-control" placeholder="Comments" id="contactForm" style="height: 100px" aria-required="true"></textarea> <!-- Added aria-required for accessibility -->
+        </div>
+        <br>
+        <div class="col-12">
+          <button class="btn btn-success" value="SUBMIT" type="submit">Submit Form</button>
+        </div>
+    </form>
+  </div>
+</main>
+<%- include('partials/bottom') %>

@@ -1,0 +1,10 @@
+<%- include('partials/top') %>
+<main class="container-fluid" role="main"> <!-- Added role="main" for accessibility -->
+  <h1 class="p-1"><%= title %></h1>
+  <p class="ps-3"><%= description %></p>
+  <p class="ps-3"><%= author %> <%= published %></p>
+  <article aria-label="Blog content"> <!-- Wrapped content in <article> and added aria-label for accessibility -->
+    <%- content %>
+  </article>
+</main>
+<%- include('partials/bottom') %>

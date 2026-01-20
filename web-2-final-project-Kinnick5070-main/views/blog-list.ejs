@@ -1,0 +1,28 @@
+<%- include('partials/top') %>
+<main class="container-fluid" role="main"> <!-- Added role="main" for accessibility -->
+  <h1 class="p-3">Blog Posts</h1>
+  <div class="container-fluid">
+    <ul class="row w-100 row-col-auto">
+    <% for (let i = 0; i < posts.length; i++) { 
+      let truncatedTitle = posts[i].title.length > 30 ? posts[i].title.substring(0, 30) + '...' : posts[i].title;
+    %>
+      <div class="col-lg-3">
+        <li class="list-unstyled">
+          <div class="card list-unstyled text-white bg-secondary mb-3 border-success">
+            <div class="card-header">
+              <a href="<%=posts[i].link%>" class="card-title card-link fs-5" aria-label="<%= posts[i].title %>"> <!-- Added aria-label to provide full title for screen readers -->
+                <%= truncatedTitle %>
+              </a>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title mb-2"><%=posts[i].author%>: <%=posts[i].published%></h4>
+                <p class="card-text"><%=posts[i].description%></p>
+            </div>
+          </div>
+        </li>
+      </div>
+    <% } %>
+    </ul>
+  </div>
+</main>
+<%- include('partials/bottom') %>
